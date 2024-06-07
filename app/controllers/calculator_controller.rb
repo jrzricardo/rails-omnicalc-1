@@ -1,7 +1,12 @@
 class CalculatorController < ApplicationController
   def home
 
-    @message = "howdy :>"
     render({ :template => "calculator_templates/home"})
   end
+
+  def square
+
+    render({ :template => "calculator_templates/square_new"})
+  end
+
 end
