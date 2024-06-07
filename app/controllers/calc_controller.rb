@@ -43,4 +43,15 @@ class CalcController < ApplicationController
     @p = payment.to_fs(:currency)
     render({ :template => "calc_templates/payment_results"})
   end
+
+  def random
+    render({ :template => "calc_templates/random"})
+  end
+
+  def random_results
+    @min_number = params.fetch("user_min").to_f
+    @max_number = params.fetch("user_max").to_f
+    @rand_number = rand(@min_number..@max_number)
+    render({ :template => "calc_templates/random_results"})
+  end
 end
